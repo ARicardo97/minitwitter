@@ -13,6 +13,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -135,6 +136,7 @@ public class DashboardActivity extends AppCompatActivity implements PermissionLi
                         //"filename" = filePathColumn
                         int imagenIndex = cursor.getColumnIndex(filePathColumn[0]); //nos devuelve el nombre enque num de columna se encuentra
                         String fotoPath = cursor.getString(imagenIndex);
+                        Log.i("foto",fotoPath);
                         profileViewModel.uploadPhoto(fotoPath); //se conecta para subir la foto
                         cursor.close();
                     }
